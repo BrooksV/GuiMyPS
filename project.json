@@ -1,0 +1,27 @@
+{
+  "ProjectName": "GuiMyPS",
+  "Description": "Module helps in creating and running WPF GUI based PowerShell Applications.",
+  "Version": "0.0.1",
+  "Manifest": {
+    "Author": "Brooks Vaughn",
+    "PowerShellHostVersion": "5.1",
+    "GUID": "b9f7d4c6-e924-4a7b-a117-e169dc71f010",
+    "Tags": [
+      "PowerShell",
+      "WPF",
+      "XAML",
+      "GUI"
+    ],
+    "ProjectUri": "https://github.com/BrooksV/GuiMyPS",
+    "LicenseUri": "https://github.com/BrooksV/GuiMyPS/blob/main/LICENSE"
+  },
+  "Pester": {
+    "TestResult": {
+      "Enabled": true,
+      "OutputFormat": "NUnitXml"
+    },
+    "Output": {
+      "Verbosity": "Detailed"
+    }
+  }
+}

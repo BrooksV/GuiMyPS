@@ -1,0 +1,45 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+
+      - name: 📦 Install ModuleTools module form PSGallery
+        run: Install-PSResource -Repository PSGallery -Name ModuleTools -TrustRepository
+
+      - name: 📦 Install MarkdownPS module form PSGallery
+        run: Install-PSResource -Repository PSGallery -Name MarkdownPS -TrustRepository
+
+      - name: 📦 Install SqlQueryClass module form PSGallery
+        run: Install-PSResource -Repository PSGallery -Name SqlQueryClass -TrustRepository
+
+      - name: 🏗️ Build Module
+        run: Invoke-MTBuild -Verbose
+
+      - name: 🧪 Run Pester Tests
+        run: Invoke-MTTest
+
+      - name: 📝 Generate Report
+        continue-on-error: true
+        run: |
+          # Get list of files in the dist directory directory
+          $Report = New-MDHeader -Text "Output Files 📁" -Level 2
+          $Report += Get-ChildItem -Path ./dist -Recurse | Select-Object Name, Directory | New-MDTable 
+          echo "$Report" >> $env:GITHUB_STEP_SUMMARY
+          echo "$Report"

@@ -1,0 +1,41 @@
+﻿TOPIC
+    about_GuiMyPS
+
+SHORT DESCRIPTION
+    PowerShell Module helps in creating and running WPF GUI based PowerShell Applications
+
+LONG DESCRIPTION
+    Collections of XAML & WPF Helper Functions to simplify creation of GUI WPF based PowerShell Applications 
+
+    The main cmdlet provided by this module is New-XamlWindow, which allows you to create and configure a 
+    WPF Form object from XAML String, File, or XmlDocument.
+
+    A PowerShell WPF Application consists of the following:
+
+    1. XAML file that defines the GUI layout and elements. This can be created manually using any text editor or via WPF editors such as Visual Studio's Blend application
+    2. PowerShell Code-Behind script that initializes the application and includes the logic for handling the interactions with the GUI interface 
+
+EXAMPLES
+    See examples such as: .\tests\Test-Usage-01.ps1
+
+TROUBLESHOOTING
+    If you encounter issues while using the GuiMyPS module, try following the test examples and verify the required assemblies are loaded 
+    and the New-XamlWindow CmdLet is returning a valid Form Object that can be shown using .ShowDialog() method.
+    
+    Also, try Killing the PowerShell session and running again.
+
+SEE ALSO
+    New-XamlWindow
+    Get-Help
+
+KEYWORDS
+    PowerShell, WPF, XAML, GUI
+
+AUTHOR
+    Brooks Vaughn
+
+VERSION
+    0.0.1
+
+LAST UPDATED
+    2025-02-20
