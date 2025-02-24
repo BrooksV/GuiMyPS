@@ -1,8 +1,8 @@
 {
   "ProjectName": "GuiMyPS",
   "Description": "Module helps in creating and running WPF GUI based PowerShell Applications.",
-  "Version": "0.0.1",
-  "CopyMode": "Content",
+  "Version": "0.0.2",
+  "ResourceCopyMode": "Content",
   "Manifest": {
     "Author": "Brooks Vaughn",
     "PowerShellHostVersion": "5.1",
