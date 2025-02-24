@@ -174,17 +174,24 @@ This includes details on:
 ```powershell
 Get-Command -Module "GuiMyPS" -Syntax
 
-- Add-ClickToEveryButton [-Element] <Object> [[-ClickHandler] <RoutedEventHandler>] [<CommonParameters>]
-- Add-ClickToEveryMenuItem [-MenuObj] <Object> [-Handler] <scriptblock> [<CommonParameters>]
-- Add-EventsToEveryCheckBox [-Element] <Object> [[-ClickHandler] <RoutedEventHandler>] [[-CheckedHandler] <RoutedEventHandler>] [[-UncheckedHandler] <RoutedEventHandler>] [[-PreviewMouseUpHandler] <MouseButtonEventHandler>] [-PreventSelectionScrolling] [<CommonParameters>]
-- Build-HandlerCode [-Elements] <Object[]> [-ControlType] <string> [<CommonParameters>]
-- Find-EveryControl [-ControlType] <Object> [-Element] <Object> [-ExcludeElement] [-UseVisualTreeHelper] [-IncludeAll] [<CommonParameters>]
-- Find-RootElement [-Element] <DependencyObject> [<CommonParameters>]
-- Format-XML [-xml] <xml> [[-indent] <Object>] [-FormatAttributes] [-IncludeXmlDeclaration] [<CommonParameters>]
-- Get-ControlContent [-Element] <Object> [<CommonParameters>]
-- Get-FormVariable [<CommonParameters>]
-- Get-ObjectPropertyDetail [-InputObject] <Object> [<CommonParameters>]
-- New-XamlWindow [-xaml] <Object> [-NoXRemoval] [-WhatIf] [-Confirm] [<CommonParameters>]
+Add-ClickToEveryButton [-Element] <Object> [[-ClickHandler] <RoutedEventHandler>] [<CommonParameters>]
+Add-ClickToEveryMenuItem [-MenuObj] <Object> [-Handler] <scriptblock> [<CommonParameters>]
+Add-EventsToEveryCheckBox [-Element] <Object> [[-ClickHandler] <RoutedEventHandler>] [[-CheckedHandler] <RoutedEventHandler>] [[-UncheckedHandler] <RoutedEventHandler>] [[-PreviewMouseUpHandler] <MouseButtonEventHandler>] [-PreventSelectionScrolling] [<CommonParameters>]
+Build-HandlerCode [-Elements] <Object[]> [-ControlType] <string> [<CommonParameters>]
+Find-EveryControl [-ControlType] <Object> [-Element] <Object> [-ExcludeElement] [-UseVisualTreeHelper] [-IncludeAll] [<CommonParameters>]
+Find-RootElement [-Element] <DependencyObject> [<CommonParameters>]
+Format-XML [-xml] <xml> [[-indent] <Object>] [-FormatAttributes] [-IncludeXmlDeclaration] [<CommonParameters>]
+Get-ControlContent [-Element] <Object> [<CommonParameters>]
+Get-FileFromDialog [[-InitialFileName] <string>] [[-FileFilter] <string>] [[-TitleDialog] <string>] [-AllowMultiSelect] [-SaveAs] [<CommonParameters>]
+Get-FormVariable [<CommonParameters>]
+Get-ObjectPropertyDetail [-InputObject] <Object> [<CommonParameters>]
+Get-UniqueFileName [[-Name] <string>] [-NoDate] [-AddTime] [-AddSeq] [<CommonParameters>]
+New-Popup [-Message] <string> [-Title] <string> [[-Time] <int>] [[-Buttons] <string>] [[-Icon] <string>] [-WhatIf] [-Confirm] [<CommonParameters>]
+New-XamlWindow [-xaml] <Object> [-NoXRemoval] [-WhatIf] [-Confirm] [<CommonParameters>]
+Save-DataGridContent [-InputObject] <psobject> [[-Path] <string>] [[-SaveAs] <string>] [<CommonParameters>]
+Save-DatasetToExcel [-InputObject] <psobject> [[-Path] <string>] [<CommonParameters>]
+Set-Message [[-Resources] <Object>] [[-Message] <string>] [-Clear] [-NoNewline] [-NewlineBefore] [-NewlineAfter] [-WhatIf] [-Confirm] [<CommonParameters>]
+
 ```
 
 ### Details
@@ -197,9 +204,15 @@ Get-Command -Module "GuiMyPS" -Syntax
 - Find-RootElement -- Transverse up the parent object tree looking for the root element which is the WPF form object
 - Format-XML -- XML pretty formatter / printer
 - Get-ControlContent -- An attempt to extract the display text for a control
+- Get-FileFromDialog -- Windows Open and SaveAs FileDialog
 - Get-FormVariable -- Lists the $WPF_* global variables that were created by New-XamlWindow when parsing the XAML x:Name="_elementName" names
 - Get-ObjectPropertyDetail -- Dumpts the Property, Value, and Type of any PowerShell object
+- Get-UniqueFileName -- Creates a Unique FileName that is TimeStamped and / or Sequence for any folder or file path
+- New-Popup -- Fully functional Wscript.Shell Popup Message Box
 - New-XamlWindow -- Main CmdLet that prepares and loads a WPF XAML string, filepath, or XML Document returning a WPF Form Object
+- Save-DataGridContent -- Exports a DataGrid's content to Clipboard, CSV, or Excel file
+- Save-DatasetToExcel -- Exports a DataSet content to an Excel file
+- Set-Message -- Write messages to a XAML TextBox using a DispatcherTimer
 
 ## Folder Structure and Build Management
 

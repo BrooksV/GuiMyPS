@@ -26,10 +26,10 @@ Function Get-FormVariable {
     param ()
 
     if ($null -eq $ReadmeDisplay -or $ReadmeDisplay -eq $false) {
-        Write-Host "If you need to reference this display again, run Get-FormVariables"
+        "If you need to reference this display again, run Get-FormVariables"
     }
-    Write-Host ("`n$("-" * 65)`nFound the following intractable elements from our form`n$("-" * 65)")
-    Get-Variable WPF*
-    Write-Host ("$("-" * 65)`n")
+    ("`n$("-" * 65)`nGet-FormVariable() Found the following intractable elements from the XAML form`n$("-" * 65)")
+    ((Get-Variable WPF*) | Select-Object -Property Name, Value | Out-String).Trim()
+    ("$("-" * 65)`n")
 }
 

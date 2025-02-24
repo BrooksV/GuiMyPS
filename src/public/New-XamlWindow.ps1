@@ -166,7 +166,7 @@ Function New-XamlWindow {
                 Write-Warning "Unable to locate $($_.Name) element name"
             }
         })
-        Write-Host "`nList of `$WPF_ named Variables of XAML Elements`n$($FormObjects | Out-String)`n" -ForegroundColor Green
+        Write-Verbose "`nList of `$WPF_ named Variables of XAML Elements`n$($FormObjects | Out-String)`n"
         $uiForm
     } Catch {
         Write-Error ($_ | Format-List | Out-String)
