@@ -90,13 +90,13 @@ Function Add-EventsToEveryCheckBox {
         Write-Verbose ("  TextBlock: {0}" -f $($Element.Inlines.Text | Out-String))
     } ElseIf ($Element -is 'System.Windows.Controls.CheckBox') {
         Write-Verbose ("  Adding CheckBox Event Handlers For: " + $Element.Content.Inlines.text -join "")
-        If (-not [Sting]::IsNullOrEmpty($ClickHandler)) {
+        If (-not [String]::IsNullOrEmpty($ClickHandler)) {
             $Element.Add_Click($ClickHandler)
         }
-        If (-not [Sting]::IsNullOrEmpty($CheckedHandler)) {
+        If (-not [String]::IsNullOrEmpty($CheckedHandler)) {
             $Element.Add_Checked($CheckedHandler)
         }
-        If (-not [Sting]::IsNullOrEmpty($UncheckedHandler)) {
+        If (-not [String]::IsNullOrEmpty($UncheckedHandler)) {
             $Element.Add_Unchecked($UncheckedHandler)
         }
     }
