@@ -19,7 +19,7 @@ The command will write the return value of the clicked button to the pipeline:
 
   If no button is clicked, the return value is -1.
 
-  .OUTPUTS
+.OUTPUTS
     Null   = -1
     OK     = 1
     Cancel = 2
