@@ -20,6 +20,8 @@ The command will write the return value of the clicked button to the pipeline:
   If no button is clicked, the return value is -1.
 
 .OUTPUTS
+    enum PopUpExitCodes { Null = -1; OK = 1; Cancel = 2; Abort = 3; Retry = 4; Ignore = 5; Yes = 6; No = 7 }
+
     Null   = -1
     OK     = 1
     Cancel = 2
@@ -42,6 +44,8 @@ Last Updated: April 8, 2013
 Version     : 1.0
 Similar to: Bill Riedy's https://www.powershellgallery.com/packages/PoshFunctions/2.2.1.6/Content/Functions%5CNew-Popup.ps1
 #>
+
+enum PopUpExitCodes { Null = -1; OK = 1; Cancel = 2; Abort = 3; Retry = 4; Ignore = 5; Yes = 6; No = 7 }
 
 #------------------------------------------------------------------
 # Display a Popup Message
